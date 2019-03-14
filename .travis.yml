@@ -1,14 +1,10 @@
-# .travis.yml
+language: java
 
-language: node_js   
-#前端工程所以是JavaScript，编译环境是node_js
+jdk:
+  - oraclejdk8
 
-node_js:
-
-- '8'   #指定node版本
-
-branchs:
-  
-    only:
-  
-        - master  #指定只有检测到master分支有变动时才执行任务
+  # Use JDK 8u45. The above line just causes the use of a minor version of Java 8.
+    addons:
+    apt:
+    packages:
+    - oracle-java8-installer
