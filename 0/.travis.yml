@@ -1,24 +1,14 @@
-language: node_js
-node_js: stable
-branches:
-  only:
-  - develop
-before_install:
-- npm install -g hexo
-- npm install -g hexo-cli
-install:
-- npm install
-script:
-- hexo clean
-- hexo generate
-after_success:
-  - cd ./public
-  - git init
-  - git config --global user.name '1170300323'
-  - git config --global user.email 'tplink8979@163.com'
-  - git add .
-  - git commit -m "generate static resources, triggerd by travis ci"
-  - git push --force "https://1170300323:${REPO_TOKEN}@${GH_REF}" master:master
-env:
-  global:
-    - GH_REF: github.com/1170300323/1170300323.github.com.git
+# .travis.yml
+
+language: node_js   
+#前端工程所以是JavaScript，编译环境是node_js
+
+node_js:
+
+- '8'   #指定node版本
+
+branchs:
+  
+    only:
+  
+        - master  #指定只有检测到master分支有变动时才执行任务
