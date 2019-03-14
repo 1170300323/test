@@ -1,5 +1,4 @@
 language: java
 
-branchs:
-  only:
-  - master
+jdk:
+  - oraclejdk8
